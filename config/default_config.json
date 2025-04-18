@@ -1,0 +1,58 @@
+# config/default_config.json
+
+{
+    "data": {
+        "default_exchange": "binance",
+        "default_timeframe": "1h",
+        "default_limit": 1000,
+        "cache_expiry": 3600,
+        "data_directory": "data"
+    },
+    "strategy": {
+        "default_strategy": "envelope",
+        "envelope": {
+            "average_type": "sma",
+            "average_period": 20,
+            "envelopes": [0.01],
+            "stop_loss_pct": 0.03,
+            "price_jump_pct": 0.01,
+            "position_size_percentage": 100,
+            "mode": "both"
+        }
+    },
+    "backtesting": {
+        "default_initial_balance": 10000,
+        "default_commission": 0.001,
+        "default_slippage": 0.0005
+    },
+    "trading": {
+        "default_exchange": "binance",
+        "use_testnet": true,
+        "max_open_orders": 10,
+        "max_position_size_percentage": 50,
+        "default_leverage": 1
+    },
+    "ui": {
+        "theme": "dark",
+        "chart_style": "candlestick",
+        "refresh_interval": 5000
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "logs/app.log",
+        "max_size": 10485760,
+        "backup_count": 5
+    },
+    "notifications": {
+        "email": {
+            "enabled": false,
+            "smtp_server": "",
+            "smtp_port": 587,
+            "sender_email": "",
+            "receiver_email": "",
+            "username": "",
+            "password": ""
+        },
+        "events": ["entry", "exit", "stop_loss", "error"]
+    }
+}
